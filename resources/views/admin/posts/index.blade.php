@@ -54,9 +54,11 @@
                                     <td>
                                         {{ $post->slug }}
                                     </td>
-                                    @if($post_type->name !== 'pages' && $post_type->category_id)
+                                    @if($post_type->name !== 'pages')
                                         <td>
-                                            {{ \App\Category::whereId($post->category_id)->first()->name }}
+                                            @if($post_type->category_id)
+                                                {{ \App\Category::whereId($post->category_id)->first()->name }}
+                                            @endif
                                         </td>
                                     @endif
                                     <td>
