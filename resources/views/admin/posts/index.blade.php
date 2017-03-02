@@ -56,7 +56,7 @@
                                     </td>
                                     @if($post_type->name !== 'pages')
                                         <td>
-                                            @if($post_type->category_id)
+                                            @if($post->category_id)
                                                 {{ \App\Category::whereId($post->category_id)->first()->name }}
                                             @endif
                                         </td>
